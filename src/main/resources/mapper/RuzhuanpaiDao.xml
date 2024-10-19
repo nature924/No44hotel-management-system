@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RuzhuanpaiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RuzhuanpaiEntity" id="ruzhuanpaiMap">
+        <result property="yudingbianhao" column="yudingbianhao"/>
+        <result property="jiudianmingcheng" column="jiudianmingcheng"/>
+        <result property="fangjianleixing" column="fangjianleixing"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="kefangtupian" column="kefangtupian"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="fangjianhao" column="fangjianhao"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RuzhuanpaiVO" >
+		SELECT * FROM ruzhuanpai  ruzhuanpai         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RuzhuanpaiVO" >
+		SELECT  ruzhuanpai.* FROM ruzhuanpai  ruzhuanpai 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RuzhuanpaiView" >
+
+		SELECT  ruzhuanpai.* FROM ruzhuanpai  ruzhuanpai 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RuzhuanpaiView" >
+		SELECT * FROM ruzhuanpai  ruzhuanpai <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
